@@ -14,11 +14,11 @@ export const HeroList = ({publisher}) => {
         // </pre>
         <ul>
         { 
-            heroesList.map(  heroe => {
-                 <li>
+            heroesList.map( heroe => (
+                 <li key={heroe.id}>
                     { heroe.superhero }
                  </li>   
-            })
+            ))
         }
         </ul>
     )
