@@ -6,7 +6,15 @@ export const HeroCard = ({heroe}) => {
 
     return( 
         <>
-
+            <div className="col">
+                <div className="card">
+                    <div className="row no gutters">
+                        <div className="col-4">
+                            <img src="" alt={ superhero } className="card-img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
