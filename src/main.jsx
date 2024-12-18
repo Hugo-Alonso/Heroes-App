@@ -7,8 +7,8 @@ import './styles.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-        <HeroesApp />
+    <BrowserRouter basename="/Heroes-App">
+      <HeroesApp />
     </BrowserRouter>
   </StrictMode>,
 )
