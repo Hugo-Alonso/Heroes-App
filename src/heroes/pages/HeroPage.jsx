@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { getHeroById } from '../helpers';
 
 export const HeroPage = () => {
@@ -14,7 +14,7 @@ export const HeroPage = () => {
     const hero = getHeroById( heroId );
     
     if (!hero) {
-      return <h1> 404 - Not Found </h1>; 
+      return <Navigate to="/marvel" />
     }
     
     return (
