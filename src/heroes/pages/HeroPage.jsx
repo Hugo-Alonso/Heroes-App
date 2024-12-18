@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { getHeroById } from '../helpers';
@@ -12,12 +12,15 @@ export const HeroPage = () => {
 
     console.log(heroId);
 
-    const hero = getHeroById( heroId );
+    // useMemo para mimorizar lo que retorna la funcion getHeroById
+    // useMemo --> valores
+    // useCallback --> funciones
+    const hero = useMemo( () => getHeroById( heroId ), [heroId])
     
     const onNavigateBack = () => {
       navigate(-1)
     }
-    
+
     const heroImageUrl = `/assets/heroes/${ heroId }.jpg`
 
     if (!hero) {
