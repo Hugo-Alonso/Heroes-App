@@ -1,46 +1,65 @@
 import React from 'react'
 import { HeroCard } from '../components'
+import { useForm } from '../../hooks/useForm';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const SearchPage = () => {
-  return (
-    <>
-      <h1 className='mt-3'>Search</h1>
-      <hr />
 
-      <div className="row">
-        <div className="col-5">
-          <h4>Searching</h4>
-          <hr />
-          <form action="">
-              <input 
-                  type="text" 
-                  placeholder='Seacrh a hero'
-                  className='form-control'
-                  name="searchText"
-                  autoComplete='off'
-              />
+    const navigate = useNavigate();
+    const location = useLocation();
 
-              <button className='btn btn-outline-primary mt-2'>
-                Search
-              </button>
-          </form>
-        </div>
+    const { searchText, onInputChange } = useForm({
+      searchText: ''
+    });
 
-        <div className="col-7">
-            <h4>Results</h4>
+    const onSearchSubmit = (event) => {
+      event.preventDefault();
+      if (searchText.trim().length <= 1) return;
+
+      navigate(`?q=${ searchText }`);
+    }
+
+    return(
+      <>
+        <h1 className='mt-3'>Search</h1>
+        <hr />
+
+        <div className="row">
+          <div className="col-5">
+            <h4>Searching</h4>
             <hr />
-            
-            <div className="alert alert-primary">
-              Search a hero
-            </div>
+            <form onSubmit={ onSearchSubmit }>
+                <input 
+                    type="text" 
+                    placeholder='Seacrh a hero'
+                    className='form-control'
+                    name="searchText"
+                    autoComplete='off'
+                    value={ searchText }
+                    onChange={ onInputChange }
+                />
 
-            <div className="alert alert-danger">
-              There's no results
-            </div>
+                <button className='btn btn-outline-primary mt-2'>
+                  Search
+                </button>
+            </form>
+          </div>
 
-            {/* <HeroCard /> */}
+          <div className="col-7">
+              <h4>Results</h4>
+              <hr />
+              
+              <div className="alert alert-primary">
+                Search a hero
+              </div>
+
+              <div className="alert alert-danger">
+                There's no results
+              </div>
+
+              {/* <HeroCard /> */}
+          </div>
         </div>
-      </div>
-    </>
-  )
+      </>
+    )
 }
