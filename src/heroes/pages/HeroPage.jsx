@@ -13,9 +13,13 @@ export const HeroPage = () => {
 
     const hero = getHeroById( heroId );
     
-    console.log(hero);
+    if (!hero) {
+      return <h1> 404 - Not Found </h1>; 
+    }
     
     return (
-      <h1>HeroPage</h1>
+      <>
+        <h1>{ hero.superhero }</h1>
+      </>
     )
 }
