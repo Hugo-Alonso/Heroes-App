@@ -2,6 +2,7 @@ import React from 'react'
 import { HeroCard } from '../components'
 import { useForm } from '../../hooks/useForm';
 import { useLocation, useNavigate } from 'react-router-dom';
+import queryString from 'query-string';
 
 export const SearchPage = () => {
 
