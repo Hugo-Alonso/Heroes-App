@@ -33,7 +33,7 @@ export const HeroPage = () => {
               <img 
                 src={ heroImageUrl }
                 alt={ hero.superhero }
-                className='img-thumbnail'
+                className='img-thumbnail animate__animated animate__fadeInLeft'
               />
           </div>
 
