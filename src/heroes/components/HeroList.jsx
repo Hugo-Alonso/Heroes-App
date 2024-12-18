@@ -12,7 +12,7 @@ export const HeroList = ({publisher}) => {
         //         JSON.stringify(heroesList, null, 3)
         //     }
         // </pre>
-        <div className="row rows-cols-1 row-cols-md-3 g-3">
+        <div className="row rows-cols-1 row-cols-md-3 g-3 mb-3">
             { 
                 heroesList.map( heroe => (
                     <HeroCard key={heroe.id} heroe={heroe} />
