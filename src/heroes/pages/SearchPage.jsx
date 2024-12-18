@@ -13,9 +13,11 @@ export const SearchPage = () => {
       searchText: ''
     });
 
+    const { q = '' } = queryString.parse( location.search ); // "q" value
+
     const onSearchSubmit = (event) => {
       event.preventDefault();
-      if (searchText.trim().length <= 1) return;
+      if (searchText.trim().length < 1) return;
 
       navigate(`?q=${ searchText }`);
     }
@@ -55,7 +57,7 @@ export const SearchPage = () => {
               </div>
 
               <div className="alert alert-danger">
-                There's no results
+                There's no results with { q }
               </div>
 
               {/* <HeroCard /> */}
