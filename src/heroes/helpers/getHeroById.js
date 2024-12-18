@@ -1,11 +1,7 @@
 
-import moduleName from '../data';
+import { heroes } from '../data';
 
 export const getHeroById = ( id ) => {
 
-
-    
-    return {
-
-    }
+    return heroes.find( hero => hero.id === id )     
 }
