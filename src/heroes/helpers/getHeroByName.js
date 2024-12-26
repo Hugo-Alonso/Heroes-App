@@ -6,5 +6,5 @@ export const getHeroByName = ( name = '') => {
     
     if (name.length === 0 ) return [];
 
-    return heroes.find( heroe => heroe.superhero.toLowerCase() == name);
+    return heroes.filter( heroe => heroe.superhero.toLowerCase().includes(name));
 }
