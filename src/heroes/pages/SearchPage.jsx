@@ -17,6 +17,8 @@ export const SearchPage = () => {
     });
 
     const heroes = getHeroByName(q);
+    const showSearch = (q.length === 0);
+    const showError = (q.length > 0) && (heroes.length === 0);
 
     const onSearchSubmit = (event) => {
       event.preventDefault();
@@ -55,7 +57,7 @@ export const SearchPage = () => {
               <h4>Results</h4>
               <hr />
               
-              {
+              {/* {
                 ( q == '')
                 ?
                 <div className="alert alert-primary">
@@ -65,7 +67,15 @@ export const SearchPage = () => {
                 <div className="alert alert-danger">
                   There's no results with <strong>{ q }</strong>
                 </div>
-              }
+              } */}
+
+              <div className='alert alert-primary animate__animated animate__fadeIn' style={{ display: showSearch ? '' : 'none' }}>
+                Search a hero
+              </div>
+
+              <div className='alert alert-danger animate__animated animate__fadeIn' style={{ display: showError ? '' : 'none'}}>
+                There's no results with <strong>{ q }</strong>
+              </div>
 
               {
                 heroes.map( hero => (
