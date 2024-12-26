@@ -21,6 +21,7 @@ export const HeroPage = () => {
       navigate(-1)
     }
     
+    // const heroImageUrl = `/public/heroes/${ id }.jpg`;
     const heroImageUrl = `/heroes/${ id }.jpg`;
 
     if (!hero) {
