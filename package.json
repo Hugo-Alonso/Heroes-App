@@ -1,6 +1,5 @@
 {
   "name": "Heroes-App",
-  "homepage": "https://hugo-alonso.github.io/Heroes-App/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,10 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d docs"
   },
   "dependencies": {
     "gh-pages": "^6.2.0",
+    "heroes-app": "file:",
     "Heroes-App": "file:",
     "heroes-spa": "file:",
     "query-string": "^9.1.1",

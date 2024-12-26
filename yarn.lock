@@ -1515,6 +1515,7 @@ hasown@^2.0.0, hasown@^2.0.1, hasown@^2.0.2:
   resolved "file:"
   dependencies:
     gh-pages "^6.2.0"
+    heroes-app "file:"
     Heroes-App "file:"
     heroes-spa "file:"
     query-string "^9.1.1"
@@ -1527,6 +1528,7 @@ hasown@^2.0.0, hasown@^2.0.1, hasown@^2.0.2:
   resolved "file:"
   dependencies:
     gh-pages "^6.2.0"
+    heroes-app "file:"
     Heroes-App "file:"
     heroes-spa "file:"
     query-string "^9.1.1"
