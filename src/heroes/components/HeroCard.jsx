@@ -11,7 +11,7 @@ const CharactersByHero = ({ alter_ego, characters}) => {
         : <p>{ characters }</p>
 }
 
-export const HeroCard = ({id, superhero, publisher, alter_ego, first_appearance, characters}) => {
+export const HeroCard = ({ id, superhero, publisher, alter_ego, first_appearance, characters }) => {
 
     // const { id, superhero, publisher, alter_ego, first_appearance, characters } = heroe;
 
