@@ -20,9 +20,9 @@ export const HeroPage = () => {
     const onNavigateBack = () => {
       navigate(-1)
     }
-
-    const heroImageUrl = `/public/heroes/${ heroId }.jpg`;
     
+    const heroImageUrl = `/heroes/${ id }.jpg`;
+
     if (!hero) {
       return <Navigate to="/marvel" />
     }
