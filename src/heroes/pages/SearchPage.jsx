@@ -77,11 +77,11 @@ export const SearchPage = () => {
                 There's no results with <strong>{ q }</strong>
               </div>
 
-              {
-                heroes.map( hero => (
-                  <HeroCard key={ hero.id } heroe={ hero } />
-                ))
-              }
+              {heroes.map(hero => (
+                <div className='mb-3'>
+                  <HeroCard key={hero.id} heroe={hero} />
+                </div>
+              ))}
           </div>
         </div>
       </>
